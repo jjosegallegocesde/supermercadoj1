@@ -35,22 +35,46 @@
     </header>
     
     <main>
-
+       
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-4">
-                <form class="mt-5">
-                    <h4 class="text-center">ORDEN DE COMPRA</h4>
-                    <div class="row">
-                        <div class="col">
-                        <input type="text" class="form-control" placeholder="Producto1">
+                    <form class="mt-5" action="index.php" method="POST">
+                        <h4 class="text-center">ORDEN DE COMPRA</h4>
+                        <div class="row">
+                            <div class="col">
+                                <input type="number" class="form-control" placeholder="Producto1" name="peso">
+                            </div>
+                            <div class="col">
+                                <input type="number" class="form-control" placeholder="Precio" name="altura">
+                            </div>
                         </div>
-                        <div class="col">
-                        <input type="number" class="form-control" placeholder="Prrecio">
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary mt-5">Submit</button>
-                </form>
+                        <button type="submit" class="btn btn-primary mt-5" name="botonEnvio">Submit</button>
+                    </form>
+
+                    
+                    <?php if(isset($_POST["botonEnvio"])):?> 
+
+                    <h4>  
+                        
+                     
+
+                        <?php 
+                            
+                            $productoA=$_POST["producto1"];
+                            $precioA=$_POST["precio1"];
+                            $costoEnvio=8000;
+                            $total=$precioA+$costoEnvio;
+                            echo("El total es de: ".$total);
+                        ?> 
+                        
+                    </h4> 
+
+                    <?php endif ?>
+
+
+                    
+
                 </div>
             </div>
         </div>
