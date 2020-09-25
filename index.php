@@ -22,7 +22,7 @@
                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="punto2.php">punto2</a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
@@ -56,9 +56,6 @@
                     <?php if(isset($_POST["botonEnvio"])):?> 
 
                     <h4>  
-                        
-                     
-
                         <?php 
                             
                             $productoA=$_POST["producto1"];
