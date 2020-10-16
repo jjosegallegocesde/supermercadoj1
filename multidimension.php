@@ -8,6 +8,8 @@ $productos=array(
 
 );
 
+//nombre-apellido-edad-cedula
+
 print_r($productos);
 echo("<br>");
 
