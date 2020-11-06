@@ -26,10 +26,8 @@ public function conectarBD(){
 
     }
     
-
-
-
 }
+
 
 public function agregarDatos($consultaSQL){
 
@@ -48,6 +46,28 @@ public function agregarDatos($consultaSQL){
     }else{
         echo("error");
     }
+
+
+}
+
+
+public function consultarDatos($consultaSQL){
+
+    //establecer una conexion
+    $conexionBD=$this->conectarBD();
+
+    //Preparar consulta
+    $consultarDatos=$conexionBD->prepare($consultaSQL);
+
+    //Establecer el método de consulta
+    $consultarDatos->setFetchMode(PDO::FETCH_ASSOC);
+
+    //Ejecutar la operacion en la BD
+    $consultarDatos->execute();
+
+    //Retorne los datos consultados
+    return($consultarDatos->fetchAll());
+
 
 
 }
