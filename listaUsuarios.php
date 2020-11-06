@@ -22,8 +22,6 @@
         // y almacenar la respuesta en una variable
         $usuarios=$transaccion->consultarDatos($consultaSQL);
 
-
-        print_r($usuarios);
     
     ?>
 
@@ -41,7 +39,7 @@
                                 <h3 class="card-title"><?php echo($usuario["nombre"]) ?></h3>
                                 <h3 class="card-title"><?php echo($usuario["apellido"]) ?></h3>
                                 <p class="card-text"><?php echo($usuario["descripcion"]) ?></p>
-                                <a href="#" class="btn btn-danger">Eliminar</a>
+                                <a href="eliminarUsuarios.php?id=<?php echo($usuario['idUsuario'])?>" class="btn btn-danger">Eliminar</a>
                                 <a href="#" class="btn btn-warning">Editar</a>
 
                             </div>

@@ -72,6 +72,27 @@ public function consultarDatos($consultaSQL){
 
 }
 
+public function eliminarDatos($consultaSQL){
+
+    
+    //establecer una conexion
+    $conexionBD=$this->conectarBD();
+
+    //Peparar Consulta
+    $eliminarDatos=$conexionBD->prepare($consultaSQL);
+
+    //Ejecutar la consulta
+    $resultado= $eliminarDatos->execute();
+
+    //verifico el resultado
+    if($resultado){
+        echo("usuario Eliminado");
+    }else{
+        echo("error");
+    }
+
+}
+
 
 
 
