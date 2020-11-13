@@ -57,7 +57,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form>
+                                        <form action="editarUsuario.php?id=<?php echo($usuario["idUsuario"])?>" method="POST">
                                             <div class="form-group">
                                                 <label>Nombre:</label>
                                                 <input type="text" class="form-control" name="nombreEditar" value="<?php echo($usuario["nombre"])?>">

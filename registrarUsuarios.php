@@ -21,6 +21,11 @@ if(isset($_POST["botonEnvio"])){
 
     //llamo al metodo de la clase BD agregarDatos()
     $transaccion->agregarDatos($consultaSQL);
+
+    //redireccion
+    header("location:formularioRegistro.php");
+
+
     
 
     
