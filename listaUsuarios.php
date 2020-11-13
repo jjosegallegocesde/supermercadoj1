@@ -34,14 +34,42 @@
 
                     <div class="col mb-4">
                         <div class="card">
-                            <img src="..." class="card-img-top" alt="...">
+                            <img src="<?php echo($usuario["foto"])?>" class="card-img-top" alt="FOTO">
                             <div class="card-body">
                                 <h3 class="card-title"><?php echo($usuario["nombre"]) ?></h3>
                                 <h3 class="card-title"><?php echo($usuario["apellido"]) ?></h3>
                                 <p class="card-text"><?php echo($usuario["descripcion"]) ?></p>
                                 <a href="eliminarUsuarios.php?id=<?php echo($usuario['idUsuario'])?>" class="btn btn-danger">Eliminar</a>
-                                <a href="#" class="btn btn-warning">Editar</a>
+                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editar<?php echo($usuario["idUsuario"])?>">
+                                   Editar
+                                </button>
 
+                            </div>
+                        </div>
+                        
+                        <div class="modal fade" id="editar<?php echo($usuario["idUsuario"])?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Edición de usuario</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label>Nombre:</label>
+                                                <input type="text" class="form-control" name="nombreEditar" value="<?php echo($usuario["nombre"])?>">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Descripcion:</label>
+                                                    <textarea class="form-control" rows="3" name="descEditar"><?php echo($usuario["descripcion"])?></textarea>
+                                            </div>
+                                            <button type="submit" class="btn btn-warning" name="botonEditar">Enviar</button>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
